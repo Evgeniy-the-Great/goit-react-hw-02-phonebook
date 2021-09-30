@@ -22,7 +22,9 @@ class App extends Component {
     }));
 
   isThereThisContact = name =>
-    this.state.contacts.some(contact => contact.name === name);
+    this.state.contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase(),
+    );
 
   deleteContact = e => {
     const id = e.target.id;
